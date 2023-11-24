@@ -97,6 +97,8 @@ repositories {
 }
 
 android {
+    namespace = 'com.swmansion.gesturehandler'
+ 
     compileSdkVersion safeExtGet("compileSdkVersion", 33)
     def agpVersion = com.android.Version.ANDROID_GRADLE_PLUGIN_VERSION
     if (agpVersion.tokenize('.')[0].toInteger() >= 7) {
