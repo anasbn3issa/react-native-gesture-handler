@@ -87,7 +87,7 @@ export default class TapGestureHandler extends GestureHandler {
   private startTap(): void {
     this.clearTimeouts();
 
-    this.waitTimeout = setTimeout(() => this.fail(), this.maxDurationMs);
+    this.waitTimeout = setTimeout(() => this.fail(), this.maxDurationMs) as any as number;
   }
 
   private endTap(): void {
@@ -99,7 +99,7 @@ export default class TapGestureHandler extends GestureHandler {
     ) {
       this.activate();
     } else {
-      this.delayTimeout = setTimeout(() => this.fail(), this.maxDelayMs);
+      this.delayTimeout = setTimeout(() => this.fail(), this.maxDelayMs) as any as number;
     }
   }
 
