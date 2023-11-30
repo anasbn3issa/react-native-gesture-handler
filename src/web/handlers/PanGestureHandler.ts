@@ -440,7 +440,7 @@ export default class PanGestureHandler extends GestureHandler {
       if (this.activateAfterLongPress > 0) {
         this.activationTimeout = setTimeout(() => {
           this.activate();
-        }, this.activateAfterLongPress);
+        }, this.activateAfterLongPress) as any as number;
       }
     } else {
       this.velocityX = this.tracker.getVelocityX(event.pointerId);
