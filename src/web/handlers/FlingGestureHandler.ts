@@ -15,7 +15,7 @@ export default class FlingGestureHandler extends GestureHandler {
 
   private maxDurationMs = DEFAULT_MAX_DURATION_MS;
   private minAcceptableDelta = DEFAULT_MIN_ACCEPTABLE_DELTA;
-  private delayTimeout!: number;
+  private delayTimeout: number | undefined;
 
   private startX = 0;
   private startY = 0;
@@ -47,7 +47,7 @@ export default class FlingGestureHandler extends GestureHandler {
 
     this.maxNumberOfPointersSimultaneously = 1;
 
-    this.delayTimeout = setTimeout(() => this.fail(), this.maxDurationMs);
+    this.delayTimeout = setTimeout(() => this.fail(), this.maxDurationMs) as any as number;
   }
 
   private tryEndFling(): boolean {

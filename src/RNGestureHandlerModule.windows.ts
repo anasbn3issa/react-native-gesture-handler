@@ -49,6 +49,9 @@ export const HammerGestures = {
 };
 
 export default {
+  isHTMLElement(value: any): value is HTMLElement {
+    return value instanceof HTMLElement;
+  },
   handleSetJSResponder(_tag: number, _blockNativeResponder: boolean) {
     // NO-OP
   },
@@ -100,7 +103,7 @@ export default {
     propsRef: React.RefObject<unknown>
   ) {
     if (
-      !(newView instanceof HTMLElement || newView instanceof React.Component)
+      !this.isHTMLElement(newView) && !(newView instanceof React.Component)
     ) {
       return;
     }

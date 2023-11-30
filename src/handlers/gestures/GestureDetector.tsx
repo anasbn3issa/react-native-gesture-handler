@@ -395,6 +395,9 @@ function getHandler(
       return gesture.onTouchesUp;
     case CALLBACK_TYPE.TOUCHES_CANCELLED:
       return gesture.onTouchesCancelled;
+    default:
+    throw new Error(`Unhandled callback type: ${type}`);
+
   }
 }
 
