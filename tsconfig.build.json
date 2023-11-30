@@ -5,7 +5,7 @@
       "jsx": "react-native",
       "lib": [
         "es6",
-        "esnext.asynciterable"
+        "esnext.asynciterable","dom"
       ],
       "resolveJsonModule": true,
       "strict": true,
